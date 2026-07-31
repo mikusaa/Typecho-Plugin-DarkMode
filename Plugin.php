@@ -20,12 +20,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) {
  * @package DarkMode
  * @author mikusa
  * @link https://www.himiku.com/
- * @version 1.1.1
+ * @version 1.1.2
  * @since 1.3.0
  */
 class Plugin implements PluginInterface
 {
-    private const VERSION = '1.1.1';
+    private const VERSION = '1.1.2';
     private const UPDATE_ACTION = 'dark-mode-update';
 
     public static function activate()
