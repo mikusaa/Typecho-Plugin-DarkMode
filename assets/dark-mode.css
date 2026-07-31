@@ -40,6 +40,7 @@ html[data-typecho-theme="dark"] {
     padding: 0;
     border: 0;
     border-left: 1px solid var(--dark-mode-control-border);
+    border-right: 1px solid var(--dark-mode-control-border);
     border-radius: 0;
     background: transparent;
     color: var(--dark-mode-control-text);
