@@ -5,6 +5,9 @@ namespace TypechoPlugin\DarkMode;
 use Typecho\Common;
 use Typecho\Plugin\PluginInterface;
 use Typecho\Widget\Helper\Form;
+use Typecho\Widget\Helper\Form\Element\Hidden;
+use Typecho\Widget\Helper\Form\Element\Submit;
+use Utils\Helper;
 use Widget\Options;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) {
@@ -16,15 +19,17 @@ if (!defined('__TYPECHO_ROOT_DIR__')) {
  *
  * @package DarkMode
  * @author mikusa
- * @version 1.0.3
+ * @version 1.1.0
  * @since 1.3.0
  */
 class Plugin implements PluginInterface
 {
-    private const VERSION = '1.0.3';
+    private const VERSION = '1.1.0';
+    private const UPDATE_ACTION = 'dark-mode-update';
 
     public static function activate()
     {
+        Helper::addAction(self::UPDATE_ACTION, Action::class);
         \Typecho\Plugin::factory('admin/header.php')->header = __CLASS__ . '::renderHeader';
         \Typecho\Plugin::factory('admin/footer.php')->end = __CLASS__ . '::renderFooter';
 
@@ -33,10 +38,23 @@ class Plugin implements PluginInterface
 
     public static function deactivate()
     {
+        Helper::removeAction(self::UPDATE_ACTION);
     }
 
     public static function config(Form $form)
     {
+        $form->addInput(new Hidden('updateSource', null, 'github'));
+
+        $update = new Submit(null, null, _t('检查并更新插件'));
+        $update->input->setAttribute('class', 'btn');
+        $update->input->setAttribute(
+            'formaction',
+            Helper::security()->getIndex('/action/' . self::UPDATE_ACTION)
+        );
+        $update->input->setAttribute('formmethod', Form::POST_METHOD);
+        $update->input->setAttribute('formtarget', '_blank');
+        $update->description(_t('从 DarkMode 的 GitHub 仓库校验并下载最新文件。更新前建议备份插件目录。'));
+        $form->addItem($update);
     }
 
     public static function personalConfig(Form $form)
