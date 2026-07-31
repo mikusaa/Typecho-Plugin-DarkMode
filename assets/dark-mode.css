@@ -1,8 +1,8 @@
 :root {
     --dark-mode-control-bg: #24272c;
-    --dark-mode-control-hover: #34383f;
-    --dark-mode-control-border: #41464e;
-    --dark-mode-control-text: #c9ced5;
+    --dark-mode-control-hover: #202328;
+    --dark-mode-control-border: #383d45;
+    --dark-mode-control-text: #bbb;
 }
 
 html[data-typecho-theme="dark"] {
@@ -26,9 +26,9 @@ html[data-typecho-theme="dark"] {
     --dm-warning: #e1bd69;
     --dm-focus: #8bc9ec;
     --dark-mode-control-bg: #292e36;
-    --dark-mode-control-hover: #353b44;
-    --dark-mode-control-border: #4a535f;
-    --dark-mode-control-text: #e4e8ee;
+    --dark-mode-control-hover: #20242a;
+    --dark-mode-control-border: #343a43;
+    --dark-mode-control-text: #bbb;
 }
 
 .dark-mode-control {
@@ -36,10 +36,9 @@ html[data-typecho-theme="dark"] {
     display: flex;
     align-items: center;
     width: 32px;
-    height: 34px;
+    height: 36px;
     padding: 0;
     border: 0;
-    border-right: 1px solid var(--dark-mode-control-border);
     border-left: 1px solid var(--dark-mode-control-border);
     border-radius: 0;
     background: transparent;
@@ -55,7 +54,7 @@ html[data-typecho-theme="dark"] {
     align-items: center;
     justify-content: center;
     width: 31px;
-    height: 34px;
+    height: 36px;
     margin: 0;
     padding: 0;
     border: 0;
@@ -78,8 +77,8 @@ html[data-typecho-theme="dark"] {
 }
 
 .dark-mode-button svg {
-    width: 17px;
-    height: 17px;
+    width: 14px;
+    height: 14px;
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
@@ -93,8 +92,8 @@ html[data-typecho-theme="dark"] {
     z-index: 300;
     top: 12px;
     right: 12px;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     border: 1px solid var(--dark-mode-control-border);
     border-radius: 2px;
     background: var(--dark-mode-control-bg);
@@ -102,8 +101,8 @@ html[data-typecho-theme="dark"] {
 }
 
 .dark-mode-control.is-floating .dark-mode-button {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
 }
 
 html[data-typecho-theme="dark"] body {
@@ -658,18 +657,18 @@ html[data-typecho-theme="dark"] .tag-list {
     .dark-mode-control.is-mobile-header {
         position: fixed;
         z-index: 360;
-        top: 3px;
-        right: 8px;
-        width: 30px;
-        height: 30px;
-        border-color: #4a535f;
-        background: #292e36;
-        color: #e4e8ee;
+        top: 0;
+        right: 6px;
+        width: 28px;
+        height: 36px;
+        border: 0;
+        background: transparent;
+        color: #bbb;
     }
 
     .dark-mode-control.is-mobile-header .dark-mode-button {
-        width: 29px;
-        height: 28px;
+        width: 28px;
+        height: 36px;
     }
 
     .dark-mode-control.is-floating {
