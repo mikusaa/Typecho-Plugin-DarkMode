@@ -1,7 +1,8 @@
 :root {
-    --dark-mode-control-bg: #f6f6f3;
-    --dark-mode-control-border: #d9d9d6;
-    --dark-mode-control-text: #444;
+    --dark-mode-control-bg: #24272c;
+    --dark-mode-control-hover: #34383f;
+    --dark-mode-control-border: #41464e;
+    --dark-mode-control-text: #c9ced5;
 }
 
 html[data-typecho-theme="dark"] {
@@ -25,6 +26,7 @@ html[data-typecho-theme="dark"] {
     --dm-warning: #e1bd69;
     --dm-focus: #8bc9ec;
     --dark-mode-control-bg: #292e36;
+    --dark-mode-control-hover: #353b44;
     --dark-mode-control-border: #4a535f;
     --dark-mode-control-text: #e4e8ee;
 }
@@ -33,35 +35,57 @@ html[data-typecho-theme="dark"] {
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    gap: 7px;
-    min-height: 36px;
-    padding: 0 12px;
-    color: #bbb;
+    width: 32px;
+    height: 34px;
+    padding: 0;
+    border: 0;
+    border-right: 1px solid var(--dark-mode-control-border);
+    border-left: 1px solid var(--dark-mode-control-border);
+    border-radius: 0;
+    background: transparent;
+    color: var(--dark-mode-control-text);
     white-space: nowrap;
 }
 
-.dark-mode-control-label {
-    font-size: 12px;
-}
-
-.dark-mode-select {
+.dark-mode-button {
+    appearance: none;
     box-sizing: border-box;
-    width: 94px;
-    height: 26px;
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 34px;
     margin: 0;
-    padding: 0 24px 0 7px;
-    border: 1px solid var(--dark-mode-control-border);
-    border-radius: 2px;
-    background-color: var(--dark-mode-control-bg);
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     color: var(--dark-mode-control-text);
-    font: inherit;
-    font-size: 12px;
     cursor: pointer;
 }
 
-.dark-mode-select:focus-visible {
+.dark-mode-button:hover {
+    background: var(--dark-mode-control-hover);
+    color: #fff;
+}
+
+.dark-mode-button:focus-visible {
+    position: relative;
+    z-index: 1;
     outline: 2px solid #8bc9ec;
-    outline-offset: 1px;
+    outline-offset: -2px;
+}
+
+.dark-mode-button svg {
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
 }
 
 .dark-mode-control.is-floating {
@@ -69,12 +93,17 @@ html[data-typecho-theme="dark"] {
     z-index: 300;
     top: 12px;
     right: 12px;
-    min-height: 38px;
+    width: 30px;
+    height: 30px;
     border: 1px solid var(--dark-mode-control-border);
-    border-radius: 4px;
+    border-radius: 2px;
     background: var(--dark-mode-control-bg);
-    color: var(--dark-mode-control-text);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.dark-mode-control.is-floating .dark-mode-button {
+    width: 28px;
+    height: 28px;
 }
 
 html[data-typecho-theme="dark"] body {
@@ -631,40 +660,21 @@ html[data-typecho-theme="dark"] .tag-list {
         z-index: 360;
         top: 3px;
         right: 8px;
-        min-height: 30px;
-        padding: 0;
-    }
-
-    .dark-mode-control.is-mobile-header .dark-mode-control-label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-    }
-
-    .dark-mode-control.is-mobile-header .dark-mode-select {
-        width: 108px;
+        width: 30px;
         height: 30px;
         border-color: #4a535f;
         background: #292e36;
         color: #e4e8ee;
     }
 
+    .dark-mode-control.is-mobile-header .dark-mode-button {
+        width: 29px;
+        height: 28px;
+    }
+
     .dark-mode-control.is-floating {
         top: 8px;
         right: 8px;
-        padding: 4px 8px;
-    }
-
-    .dark-mode-control.is-floating .dark-mode-control-label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
     }
 }
 

@@ -16,12 +16,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) {
  *
  * @package DarkMode
  * @author mikusa
- * @version 1.0.2
+ * @version 1.0.3
  * @since 1.3.0
  */
 class Plugin implements PluginInterface
 {
-    private const VERSION = '1.0.2';
+    private const VERSION = '1.0.3';
 
     public static function activate()
     {
