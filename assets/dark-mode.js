@@ -113,6 +113,11 @@
     }
 
     function createControl() {
+        navigation = document.querySelector('.typecho-head-nav .operate');
+        if (!navigation) {
+            return;
+        }
+
         var iconDefinitions = {
             light: [
                 ['circle', {cx: '12', cy: '12', r: '4'}],
@@ -145,13 +150,7 @@
         });
         control.appendChild(button);
 
-        navigation = document.querySelector('.typecho-head-nav .operate');
-        if (navigation) {
-            placeNavigationControl();
-        } else {
-            control.className += ' is-floating';
-            document.body.appendChild(control);
-        }
+        placeNavigationControl();
 
         updateControl(currentMode(), resolvedTheme(currentMode()));
     }

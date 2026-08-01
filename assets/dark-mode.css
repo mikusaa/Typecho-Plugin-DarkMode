@@ -1,5 +1,4 @@
 :root {
-    --dark-mode-control-bg: #24272c;
     --dark-mode-control-hover: #202328;
     --dark-mode-control-border: #383d45;
     --dark-mode-control-text: #bbb;
@@ -25,7 +24,6 @@ html[data-typecho-theme="dark"] {
     --dm-success: #8dcf91;
     --dm-warning: #e1bd69;
     --dm-focus: #8bc9ec;
-    --dark-mode-control-bg: #292e36;
     --dark-mode-control-hover: #20242a;
     --dark-mode-control-border: #343a43;
     --dark-mode-control-text: #bbb;
@@ -86,24 +84,6 @@ html[data-typecho-theme="dark"] {
     stroke-linecap: round;
     stroke-linejoin: round;
     pointer-events: none;
-}
-
-.dark-mode-control.is-floating {
-    position: fixed;
-    z-index: 300;
-    top: 12px;
-    right: 12px;
-    width: 28px;
-    height: 28px;
-    border: 1px solid var(--dark-mode-control-border);
-    border-radius: 2px;
-    background: var(--dark-mode-control-bg);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
-}
-
-.dark-mode-control.is-floating .dark-mode-button {
-    width: 26px;
-    height: 26px;
 }
 
 html[data-typecho-theme="dark"] body {
@@ -265,6 +245,19 @@ html[data-typecho-theme="dark"] .message.success,
 html[data-typecho-theme="dark"] .success {
     background: #263a2b;
     color: #a8dda9;
+}
+
+/* Typecho's highlight effect injects light inline colors into popup messages. */
+html[data-typecho-theme="dark"] .message.popup.error {
+    background-color: #44282b !important;
+}
+
+html[data-typecho-theme="dark"] .message.popup.notice {
+    background-color: #403822 !important;
+}
+
+html[data-typecho-theme="dark"] .message.popup.success {
+    background-color: #263a2b !important;
 }
 
 html[data-typecho-theme="dark"] .message a {
@@ -672,10 +665,6 @@ html[data-typecho-theme="dark"] .tag-list {
         height: 36px;
     }
 
-    .dark-mode-control.is-floating {
-        top: 8px;
-        right: 8px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
